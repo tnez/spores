@@ -24,6 +24,18 @@ SPORES is agent-agnostic and environment-agnostic. It works anywhere an agent ca
 
 ---
 
+## Getting Started
+
+Paste this into your agent:
+
+```text
+Read https://raw.githubusercontent.com/tnez/spores/main/BOOTSTRAP.md and follow the instructions.
+```
+
+That's it. The agent handles the rest.
+
+---
+
 ## Git as Substrate
 
 Git is the infrastructure for self-improvement. Not for collaboration—for evolution.
