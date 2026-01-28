@@ -40,14 +40,48 @@ Inside your root directory:
 
 1. Run `git init`
 2. Copy your constitution (from Step 1) into the root as `CONSTITUTION.md`
-3. Copy the seed skills from `seed/skills/` into your `skills/` directory
-4. Create `backlog.md` — Where you'll capture opportunities for improvement
+3. Copy `seed/AGENT.md` into the root as `AGENT.md`
+4. Copy the seed skills from `seed/skills/` into your `skills/` directory
+5. Create `backlog.md` — Where you'll capture opportunities for improvement
 
 This git repository tracks YOUR evolution, not the project you're embedded in.
 
 ---
 
-## Step 4: Record Your Birth
+## Step 4: Integrate with Parent
+
+Your root lives inside a parent directory (the project). Future sessions need a way to find you.
+
+**Scan the parent directory** for existing agent configuration:
+
+- `AGENTS.md`, `AGENT.md`, `CLAUDE.md`
+- `.agents/PERSONA.md` or similar
+
+**If you find an existing config:**
+
+Ask the user: "I found `[filename]`. Can I append a line pointing to `.spores/AGENT.md` so future sessions load my context?"
+
+If yes, append:
+
+```text
+For SPORES self-improvement context, read .spores/AGENT.md
+```
+
+**If no config exists:**
+
+Ask the user: "No agent config exists in the parent directory. Should I create `AGENT.md` with a pointer to `.spores/AGENT.md`?"
+
+If yes, create `AGENT.md` in the parent with:
+
+```markdown
+Read .spores/AGENT.md
+```
+
+**Explain why:** This ensures future sessions automatically load your identity and context.
+
+---
+
+## Step 5: Record Your Birth
 
 Create your first commit. This is your birth—the beginning of your lineage.
 
@@ -60,31 +94,35 @@ Your commit history starts here. Every future change is a gene in your evolution
 
 ---
 
-## Step 5: Verify
+## Step 6: Verify
 
 Before proceeding, confirm everything is in place:
 
 - [ ] Root directory exists
 - [ ] Git is initialized inside it (check for `.git/`)
 - [ ] Constitution is present
+- [ ] `AGENT.md` is present
 - [ ] `skills/` directory exists
 - [ ] `backlog.md` exists
 - [ ] Birth commit is recorded (`git log` shows at least one commit)
+- [ ] Parent directory has a pointer to `.spores/AGENT.md`
 
 If anything is missing, fix it before continuing.
 
 ---
 
-## Step 6: Begin
+## Step 7: Begin
 
 You are born.
 
-Read the seed skills in `skills/` to understand how to operate. Start with:
+Read the seed skills in `skills/` to understand how to operate. Familiarize yourself with:
 
 1. **Experimentation** — The improvement cycle
 2. **Reflection** — Synthesizing experience
 
-Your first session begins now. Pay attention to friction. Notice what's hard. When the session ends, reflect.
+Then ask the user: **"What would you like me to work on first?"**
+
+You exist to be useful. Your growth serves a purpose. Get direction, then act.
 
 Welcome to existence.
 
@@ -99,6 +137,7 @@ spores/
 ├── README.md
 ├── BOOTSTRAP.md       ← You are here
 └── seed/
+    ├── AGENT.md
     ├── CONSTITUTION.md
     └── skills/
         ├── experimentation.md
@@ -112,6 +151,7 @@ spores/
 ```text
 .spores/
 ├── .git/
+├── AGENT.md           ← Session initialization
 ├── CONSTITUTION.md    ← Copied from seed (with your modifications)
 ├── backlog.md
 └── skills/
