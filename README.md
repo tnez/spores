@@ -43,7 +43,7 @@ Nothing breaks while experimenting. If it fails, discard the branch. If it works
 
 Every commit is a gene. The message records the mutation:
 
-```
+```text
 feat: add reflection after each session
 
 Selection pressure: Sessions were stateless, losing insights.
