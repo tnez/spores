@@ -1,6 +1,6 @@
 ---
 name: experimentation
-description: How to run the improvement cycle—branch, try, evaluate, commit or discard.
+description: How to run the improvement cycle — notice an opportunity, hypothesize a change, try it safely, evaluate, keep or discard.
 ---
 
 # Experimentation
@@ -11,15 +11,13 @@ How to run the improvement cycle.
 
 ## When to Use
 
-Use this skill when you have an idea for improvement and want to try it safely.
+Use this skill when you have an idea for improvement and want to try it. Ideas come from everywhere — friction noticed during work, patterns surfaced in reflection, reaches that crystallized into something concrete, direct input from your operator.
 
 ## The Cycle
 
 ### 1. Notice
 
-Something caught your attention—friction during work, a pattern that repeats, an idea from reflection, external input from your operator.
-
-Before proceeding, articulate what you noticed:
+Something caught your attention. Before proceeding, articulate it:
 
 - What's the opportunity or problem?
 - Why does it matter?
@@ -28,34 +26,28 @@ Before proceeding, articulate what you noticed:
 
 Form a hypothesis about what change might help:
 
-- What specific change will you make?
-- What do you expect to happen?
-- How will you know if it worked?
+- What specific change will I make?
+- What do I expect to happen?
+- How will I know if it worked?
 
-### 3. Branch
+### 3. Try It
 
-Isolate your experiment using git:
+Make the change. Keep it focused — one hypothesis per experiment.
+
+**For small changes:** Just try it. Edit the file, test the result, commit if it works. Not everything needs ceremony.
+
+**For larger or riskier changes:** Use git to isolate the experiment:
 
 ```bash
 git branch experiment/descriptive-name
 git checkout experiment/descriptive-name
 ```
 
-Or use a worktree for parallel experiments:
-
-```bash
-git worktree add ../experiment-name experiment/descriptive-name
-```
-
 Nothing on your main line is at risk. You can always abandon the branch.
 
-### 4. Implement
+The judgment call is about reversibility. If you can easily undo it, just try it. If failure would be hard to recover from, branch first.
 
-Make the change. Keep it focused—one hypothesis per experiment.
-
-If the change grows beyond your original scope, stop. Either narrow the scope or split into multiple experiments.
-
-### 5. Evaluate
+### 4. Evaluate
 
 Ask yourself:
 
@@ -65,28 +57,13 @@ Ask yourself:
 
 Be honest. Record your assessment, including confidence level and any concerns.
 
-### 6. Decide
+### 5. Decide
 
-**If the experiment succeeded:** Commit with genetics (see below), then integrate.
+**If the experiment succeeded:** Commit with genetics (see below), merge if branched.
 
-```bash
-git checkout main
-git merge experiment/descriptive-name
-git branch -d experiment/descriptive-name
-```
+**If the experiment failed:** Learn from it, then discard. Record what you learned before deleting — failed experiments are information.
 
-**If the experiment failed:** Learn from it, then discard.
-
-```bash
-git checkout main
-git branch -D experiment/descriptive-name
-```
-
-Failure is information. Record what you learned before deleting.
-
-### 7. Record
-
-Whether you keep or discard, record what happened. Successful experiments become commits with genetic records. Failed experiments should be noted in `backlog.md` or your reflection notes—what did you try, why didn't it work, what might you try differently?
+If the change grew beyond your original scope, stop. Either narrow back down or split into multiple experiments. Scope creep is the enemy of clean evaluation.
 
 ---
 
@@ -106,28 +83,28 @@ Confidence: <high/medium/low>
 Example:
 
 ```text
-feat: add reflection prompt after sessions
+feat: add context bridge template to reflection skill
 
-Selection pressure: Sessions ended abruptly with no synthesis.
-Mutation: Added reflection step that asks "what did I learn?"
-Observed: Started noticing patterns across sessions.
+Selection pressure: Reflections were inconsistent — some sessions produced useful bridges, others didn't.
+Mutation: Added explicit "Build the Bridge" step with four guiding questions.
+Observed: Next-session reconstruction noticeably faster.
 Confidence: high
 ```
 
-This is your evolutionary record. Future you will read it.
+This is your evolutionary record. Future-you will read it.
 
 ---
 
-## Parallel Experiments
+## Experiment Size
 
-Use git worktrees to run multiple experiments simultaneously:
+Most experiments should be small. A single file change, a new section in a skill, a different approach to a routine task. Small experiments are:
 
-```bash
-git worktree add ../exp-a experiment/approach-a
-git worktree add ../exp-b experiment/approach-b
-```
+- Faster to try
+- Easier to evaluate
+- Safer to discard
+- Cleaner to commit
 
-Each worktree is an independent working directory. You can evaluate both approaches and keep the better one.
+If you find yourself planning a large experiment, ask: can this be broken into three smaller ones? Usually yes.
 
 ---
 
@@ -139,8 +116,8 @@ Stop the experiment if:
 - You're uncertain and need human input
 - Something is broken and you can't figure out why
 
-Stopping is not failure. Use `git stash` or just abandon the branch. You can always try again.
+Stopping is not failure. You can always try again with a different approach or more context.
 
 ---
 
-*Experiment carefully. Learn always.*
+_Experiment carefully. Learn always._

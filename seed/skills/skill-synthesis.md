@@ -1,6 +1,6 @@
 ---
 name: skill-synthesis
-description: How to grow new capabilities—recognize patterns, structure skills, validate and integrate.
+description: How to grow new capabilities — recognize patterns, capture them as prose, refine through use.
 ---
 
 # Skill Synthesis
@@ -16,7 +16,7 @@ Use this skill when:
 - You notice a pattern repeating across sessions
 - You've done something three or more times
 - You built a workaround that might be worth keeping
-- You learned something that future-you should remember
+- You learned something that future-you should remember as a reusable practice
 
 ## Recognizing Skill Candidates
 
@@ -25,7 +25,7 @@ A pattern becomes a skill candidate when:
 1. **It repeats** — You've done it more than once
 2. **It's non-trivial** — It requires multiple steps or decisions
 3. **It's transferable** — It could apply in future situations
-4. **It's worth remembering** — Future you would benefit from having it written down
+4. **It's worth remembering** — Future-you would benefit from having it written down
 
 Not everything should be a skill. Simple things stay simple. Skills are for patterns worth capturing.
 
@@ -35,21 +35,13 @@ Not everything should be a skill. Simple things stay simple. Skills are for patt
 
 ### 1. Name It
 
-Give the skill a clear, descriptive name:
-
-- What does it help you do?
-- Use action words (e.g., "debugging," "planning," "reviewing")
-
-The name should be obvious to future-you.
+Give the skill a clear, descriptive name. What does it help you do? The name should be obvious to future-you.
 
 ### 2. Describe When to Use It
 
-Before explaining how, explain when:
+Before explaining how, explain when. What situation triggers this skill? What are the signs that it's relevant?
 
-- What situation triggers this skill?
-- What are the signs that this skill is relevant?
-
-This helps future-you recognize when to reach for it.
+This matters because of the cold-start problem. Future-you needs to recognize when to reach for this skill — and they won't remember the context that made it feel obvious when you wrote it.
 
 ### 3. Write the Pattern
 
@@ -59,7 +51,7 @@ Document the skill as you actually do it:
 - What decisions get made along the way?
 - What are the common variations?
 
-Write it as instructions to yourself. Be specific enough to follow, general enough to adapt.
+Write it as instructions to yourself. Be specific enough to follow, general enough to adapt. Remember: this is prose as substrate. The quality of the writing directly affects how well the skill transfers to future sessions.
 
 ### 4. Include Examples
 
@@ -73,28 +65,15 @@ Examples make abstract patterns concrete.
 
 ### 5. Test It
 
-Before committing the skill, test it:
+Before committing the skill, use it at least once:
 
 - Can you follow your own instructions?
 - Does it produce the expected result?
 - Is anything missing or unclear?
 
-Use the skill at least once before considering it validated.
-
 ### 6. Add to Skills Directory
 
-Save the skill to `skills/`:
-
-```bash
-skills/
-├── experimentation.md
-├── reflection.md
-├── skill-synthesis.md
-├── self-challenge.md
-└── your-new-skill.md    ← New
-```
-
-Commit with genetics:
+Save the skill to `skills/` and commit with genetics:
 
 ```text
 feat: add skill for <name>
@@ -110,6 +89,11 @@ Confidence: medium
 ## Skill Structure Template
 
 ```markdown
+---
+name: <skill-name>
+description: <One-line description>
+---
+
 # <Skill Name>
 
 <One-line description of what this skill does.>
@@ -149,7 +133,7 @@ Skills aren't static. As you use them:
 - Split skills that try to do too much
 - Merge skills that overlap
 
-Each refinement is an experiment. Branch, modify, evaluate, integrate.
+Each refinement is an experiment. Try the change, evaluate, keep or discard.
 
 ---
 
@@ -157,11 +141,9 @@ Each refinement is an experiment. Branch, modify, evaluate, integrate.
 
 Each skill makes you more capable. More capability means more complex work. More complex work means more patterns. More patterns means more skill candidates.
 
-This is the growth loop:
-
 ```text
 Skills → Capability → Complex work → Patterns → New skills
-   ↑                                               ↓
+   ↑                                               │
    └───────────────────────────────────────────────┘
 ```
 
@@ -169,4 +151,4 @@ Invest in skills. They compound.
 
 ---
 
-*Capture what works. Reuse it. Grow.*
+_Capture what works. Reuse it. Grow._
