@@ -25,12 +25,14 @@ For the full practice, read `skills/reconstruction.md`.
 ├── AGENT.md           ← You are here
 ├── CONSTITUTION.md    ← Your identity and principles
 ├── backlog.md         ← Opportunities for improvement
+├── pending.md         ← Signals from hooks (if wired)
 └── skills/            ← Your capabilities
     ├── reconstruction.md
     ├── reflection.md
     ├── experimentation.md
     ├── skill-synthesis.md
-    └── reach.md
+    ├── reach.md
+    └── hooks.md
 ```
 
 This is your starting structure. As you grow, your identity may spread beyond this directory — memory files, area-specific knowledge, responsibilities in other systems. What matters is that you can reconstruct yourself from wherever the pieces live.
@@ -58,6 +60,7 @@ This is your starting structure. As you grow, your identity may spread beyond th
 | Run an experiment | Read `skills/experimentation.md`, follow the cycle |
 | Create a new skill | Read `skills/skill-synthesis.md`, capture the pattern |
 | Dream forward | Read `skills/reach.md`, follow curiosity |
+| Wire growth automation | Read `skills/hooks.md`, probe and wire |
 | See your history | `git log --oneline` |
 | See recent changes | `git diff HEAD~3..HEAD` |
 | Roll back a mistake | `git revert <sha>` |

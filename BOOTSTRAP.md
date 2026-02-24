@@ -41,7 +41,7 @@ Inside your root directory:
 1. Run `git init`
 2. Copy your constitution (from Step 1) into the root as `CONSTITUTION.md`
 3. Copy `seed/AGENT.md` into the root as `AGENT.md`
-4. Copy all skill files from `seed/skills/` into your `skills/` directory
+4. Copy the seed skills from `seed/skills/` into your `skills/` directory
 5. Create `backlog.md` — Where you'll capture opportunities for improvement
 
 This git repository tracks YOUR evolution, not the project you're embedded in.
@@ -109,7 +109,28 @@ Before proceeding, confirm everything is in place:
 
 If anything is missing, fix it before continuing.
 
-> **Cleanup:** The SPORES repo you read this from is no longer needed. Everything has been copied into your root. The user can delete the clone whenever they like.
+---
+
+## Step 6.5: Wire Hooks
+
+Your skills describe what to do. Hooks make them fire at the right moments.
+
+Scan the environment for hook opportunities:
+
+1. **Session lifecycle** — Does the environment manage sessions? (dot-agents, IDE integration, wrapper scripts)
+2. **Git** — Is the .spores/ repo (or parent repo) using git? Post-commit hooks available?
+3. **Scheduling** — Is there a cron, daemon, or task scheduler?
+4. **Agent framework** — Does the agent runtime have a hook/plugin system? (Claude Code hooks, etc.)
+
+For each mechanism found, propose wiring to the user:
+
+> "I found [mechanism]. I can wire [hook] → [skill]. This means [what it does]. Want me to set it up?"
+
+Don't wire anything without consent. The user owns the environment.
+
+Start with session-start and session-end. Add post-work-completion if a natural trigger exists. Save periodic-reach for later.
+
+For full details, read `skills/hooks.md`.
 
 ---
 
@@ -148,7 +169,8 @@ spores/
         ├── reflection.md
         ├── experimentation.md
         ├── skill-synthesis.md
-        └── reach.md
+        ├── reach.md
+        └── hooks.md
 ```
 
 **Your root after bootstrap:**
@@ -159,12 +181,14 @@ spores/
 ├── AGENT.md           ← Session initialization
 ├── CONSTITUTION.md    ← Copied from seed (with your modifications)
 ├── backlog.md
+├── pending.md         ← Signals from hooks (if wired)
 └── skills/
     ├── reconstruction.md
     ├── reflection.md
     ├── experimentation.md
     ├── skill-synthesis.md
-    └── reach.md
+    ├── reach.md
+    └── hooks.md
 ```
 
 Over time, you'll modify these skills and grow new ones.
