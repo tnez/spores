@@ -1,26 +1,160 @@
 # SPORES
 
-*Self-improving Patterns for Organic, Recursive Evolution of Systems*
+_Self-improving Patterns for Organic, Recursive Evolution of Systems_
 
-A seed packet for growing self-improving agents.
+Patterns for growing self-improving agents.
 
 ---
 
 ## What This Is
 
-SPORES is not code. It's a set of instructions and patterns that any agent can read, internalize, and use to bootstrap itself into a self-improving system.
+SPORES is not code. It's a set of patterns — written in prose — that help agents grow.
 
-**The agent already exists.** Claude Code, OpenCode, Aider, Cursor, local LLMs, whatever comes next—capable agents are everywhere. SPORES doesn't build agents. It teaches them how to grow.
+**The agent already exists.** Claude Code, OpenCode, Aider, Cursor, local LLMs, whatever comes next — capable agents are everywhere. SPORES doesn't build agents. It teaches them how to improve themselves over time.
 
-## How It Works
+This works for new agents bootstrapping from nothing. It also works — maybe especially — for agents that are already alive and working and need to get better at what they do.
 
-1. Point an agent at this repo
-2. The agent reads the bootstrap instructions
-3. The agent "births" itself—establishing identity and initial structure
-4. The agent uses the seed skills to experiment, evolve, and improve
-5. You watch it grow—see what emerges
+## The Central Problem
 
-SPORES is agent-agnostic and environment-agnostic. It works anywhere an agent can read, write, and execute.
+Agent self-improvement is fundamentally different from human self-improvement because of one constraint:
+
+**Every session starts from zero.**
+
+Humans remember. They wake up knowing who they are, what they did yesterday, what they're working toward. Agents don't. Each session is a cold start. Identity, context, progress, hard-won insights — all of it must be reconstructed from artifacts.
+
+This changes everything. An agent can't just "learn from experience" the way a person does. It has to write things down in ways that a future version of itself — one that remembers nothing — can pick up and use. Growth that isn't captured in durable artifacts doesn't survive.
+
+Every pattern in SPORES flows from this constraint.
+
+---
+
+## Core Concepts
+
+### Prose as Substrate
+
+An agent's identity is language. Its skills are instructions written in natural language. Its memory is narrative. Its constitution is a document it reads, interprets, and is shaped by.
+
+This matters because it means the medium of self-improvement is writing. When an agent improves, what actually changes is prose — a skill gets refined, a memory gets recorded, a reflection captures something new. The agent doesn't compile itself. It rewrites itself.
+
+And every session, the agent doesn't remember itself. It *re-becomes*. It reads the words that previous versions helped shape, and a fresh mind interprets them. The continuity isn't in the agent — it's in the artifacts. The prose is what persists.
+
+This is why the quality of writing matters so much. Sloppy prose means a degraded self. Clear prose means a stronger reconstruction. The agent's ability to write well about itself is directly tied to its ability to grow.
+
+### Context Bridges
+
+The most important artifacts an agent produces aren't code or output — they're the bridges it builds for its future self.
+
+A context bridge is anything written by present-you for future-you who remembers nothing:
+
+- **Reflection notes** that synthesize a session into something a cold-start agent can absorb in seconds
+- **Memory files** that accumulate the lessons too important to re-learn
+- **Backlog entries** with enough context that they're actionable without the original conversation
+- **Commit messages** that capture not just what changed, but why
+
+The quality of these bridges determines the rate of growth. Poor bridges mean the agent re-discovers the same insights repeatedly. Good bridges mean each session starts further along than the last.
+
+### Safe Experimentation
+
+An agent that modifies its own identity and skills is doing something dangerous. A bad edit to a memory file, a reflection note that overwrites something important, a skill refinement that loses the original insight — these are real risks. Context is fragile. It's easy to lose, easy to corrupt.
+
+Git makes experimentation safe. Not as "substrate" — prose is the substrate. Git is the safety net. The trail of breadcrumbs that lets the agent be bold about trying changes, because there's always a way back.
+
+- **Branches** isolate experiments. The agent can try a mutation without risking what works. If it fails, discard the branch. If it works, merge it in.
+- **Commits** mark known-good states. When something breaks, the agent can return to the last point where things worked.
+- **Diffs** make change visible. The agent can see exactly what mutated and decide whether the mutation was an improvement.
+
+```bash
+git diff HEAD~5..HEAD     # "What changed recently?"
+git log --oneline         # "What states have I passed through?"
+git revert <sha>          # "That mutation was wrong. Go back."
+```
+
+Without this safety net, self-modification is too risky. With it, the agent can experiment freely — knowing that no mistake is permanent.
+
+### Distributed Identity
+
+An agent's identity is rarely one file in one place.
+
+A working agent has a constitution, accumulated memory, area-specific knowledge, learned patterns, skills, responsibilities — spread across directories, repos, and systems. Its "self" is distributed.
+
+SPORES doesn't require everything to live in a single `.spores/` directory. The seed content provides a starting structure, but a mature agent's identity will spread to fit its environment. What matters is that the agent knows where its pieces are and can reconstruct itself from them.
+
+The constitution is the anchor — the one artifact that defines what "better" means. Everything else can flex.
+
+### Collaborative Evolution
+
+The most interesting growth happens in collaboration with a human.
+
+Some mutations come from the agent's own reflection — noticing friction, synthesizing patterns, experimenting with alternatives. Some come from the human — direction, feedback, insight the agent couldn't generate alone. The interplay is where the best growth happens.
+
+This is more than "ask when uncertain." It's co-evolution:
+
+- The human observes the agent from the outside, seeing patterns the agent can't see about itself
+- The agent observes its own internals, seeing constraints the human can't see
+- Together, they identify growth opportunities neither would find alone
+
+The agent's backlog should capture opportunities from both sources. Commit messages should note whether a mutation was self-generated or collaborative. The evolutionary record is richer when it reflects both perspectives.
+
+### Hooks
+
+Without automation, SPORES is a reference document the agent consults when it remembers to. That's not good enough. Growth behaviors should fire automatically.
+
+Hooks are events that trigger SPORES patterns:
+
+- **Post-session** — Reflection fires, producing context bridges for the next session
+- **Post-work-completion** — Backlog scan for friction noticed during work
+- **Session-start** — Load identity, read recent bridges, reconstruct context
+- **Periodic** — Self-challenge generates growth opportunities on a cadence
+
+SPORES defines hooks as prose — what they are, when they fire, what to do. Wiring is environment-specific. A Claude Code agent might use `.claude/hooks`. A different agent might use git hooks or cron. The pattern is universal; the plumbing is local.
+
+When hooks work, growth becomes a natural byproduct of working — not a separate activity the agent has to remember to do.
+
+---
+
+## The Growth Lifecycle
+
+Growth isn't just bootstrapping. It's a lifecycle with distinct phases:
+
+### Birth
+
+The agent reads the seed, establishes an initial identity, and records its first commit. This is the bootstrap — covered in detail in [BOOTSTRAP.md](BOOTSTRAP.md).
+
+Birth is important but brief. The agent shouldn't spend long here.
+
+### Establishment
+
+The agent builds initial capability. It runs its first experiments, develops its first grown skills, starts to find its shape. It's learning how to learn.
+
+This phase is characterized by rapid change and frequent course corrections. The agent is figuring out what works in its specific environment, with its specific operator, for its specific purpose.
+
+### Ongoing Evolution
+
+The long game. The agent has a working identity, a growing skill set, and established patterns. Growth becomes more deliberate:
+
+- Refactoring skills that have accumulated cruft
+- Evolving the constitution as understanding deepens
+- Reaching toward possibilities that haven't been asked for yet
+- Developing context bridges that are increasingly efficient
+- Growing new capabilities that compound on existing ones
+
+This is where most of an agent's life is spent. SPORES should serve this phase as well as it serves birth.
+
+---
+
+## Seed Skills
+
+SPORES includes five seed skills — prose patterns the agent can reference and adapt. These aren't code. They're instructions for common operations. The agent grows new skills over time; these are the starting set.
+
+**[Reconstruction](seed/skills/reconstruction.md)** — Re-becoming yourself. The session-start ritual of reading your own artifacts, rebuilding context, and crossing the bridges that past-you built. Reflection writes the bridge. Reconstruction crosses it.
+
+**[Reflection](seed/skills/reflection.md)** — Writing for your future self. Pause, review what happened, notice friction, extract learnings. The critical discipline: every reflection is written for a future you that remembers nothing. This is the most important bridge you build.
+
+**[Experimentation](seed/skills/experimentation.md)** — The improvement cycle. Notice an opportunity, hypothesize a change, try it safely, evaluate, keep or discard. Growth happens through small, frequent mutations — not grand plans.
+
+**[Skill Synthesis](seed/skills/skill-synthesis.md)** — Growing new capabilities. Patterns emerge through doing, get noticed, get written down, get refined through use. Skills compound — each one makes the agent more capable.
+
+**[Reach](seed/skills/reach.md)** — Dreaming forward. Step back from the immediate, follow curiosity, imagine what could exist that doesn't yet. Not every dream becomes a project. Some are seeds that germinate later. This is how growth becomes proactive instead of reactive.
 
 ---
 
@@ -36,196 +170,19 @@ That's it. The agent handles the rest.
 
 ---
 
-## Git as Substrate
-
-Git is the infrastructure for self-improvement. Not for collaboration—for evolution.
-
-### The Laboratory
-
-Branches and worktrees let the agent try mutations safely:
-
-```bash
-git branch experiment/try-new-approach
-git worktree add ../parallel-experiment  # Run variations simultaneously
-```
-
-Nothing breaks while experimenting. If it fails, discard the branch. If it works, merge it in.
-
-### The Genetic Record
-
-Every commit is a gene. The message records the mutation:
-
-```text
-feat: add reflection after each session
-
-Selection pressure: Sessions were stateless, losing insights.
-Mutation: Added post-session synthesis step.
-Observed: Patterns now compound across sessions.
-```
-
-The full `git log` is the evolutionary history. The agent can read its own ancestry.
-
-### The Mirror
-
-Git enables introspection—the agent can look inside itself:
-
-```bash
-git diff HEAD~5..HEAD     # "How have I changed recently?"
-git log --oneline         # "What is my lineage?"
-git show <sha>            # "What exactly was this mutation?"
-git bisect                # "When did this behavior emerge?"
-git reflog                # "What states have I passed through?"
-```
-
-The agent reads diffs of its own instructions, skills, and identity. Self-awareness through version control.
-
----
-
-## What Git Doesn't Provide
-
-Git is the substrate. These are the capacities the agent must develop—using the one thing it already has: itself.
-
-### Identity
-
-*What am I trying to become?*
-
-The agent needs a constitution—principles that guide what "better" means. Without identity, mutations have no direction.
-
-SPORES provides a seed identity at bootstrap—a minimal starting constitution. The user can override, extend, or refine this seed to fit their context. The agent merges these into its initial constitution and evolves from there.
-
-The constitution is itself subject to mutation over time—but carefully.
-
-### Evaluation
-
-*Was this change an improvement?*
-
-Git tracks what changed, but doesn't judge. The agent does.
-
-After each experiment, the agent asks itself:
-
-- Did I accomplish what I set out to do?
-- Did anything break that was working before?
-- Does this align with my constitution?
-
-The agent records its own assessment—including confidence and concerns. When uncertain, it flags for human input. The commit message captures the self-evaluation alongside the genetics.
-
-### Mutation Source
-
-*What should I try next?*
-
-The agent is already running sessions. During those sessions, it encounters friction. It notices things.
-
-- **During work** — Notice what's hard, what's repetitive, what fails
-- **After work** — Reflect on what was noticed
-- **Between sessions** — A backlog of opportunities accumulates
-- **When experimenting** — Pull from the backlog
-
-The mutation source is the agent's own experience. Reflection surfaces it. The backlog captures it.
-
----
-
-Both evaluation and mutation source derive from the same capacity: **the agent's ability to introspect**. SPORES doesn't provide an external judge or an idea generator. It teaches the agent to use itself.
-
----
-
-## Seed Skills
-
-SPORES includes seed skills—prose patterns the agent can reference and adapt. These are not code. They're instructions for common operations. The agent can grow new skills over time; these are the starting set.
-
-### Experimentation
-
-How to run the improvement cycle:
-
-1. Notice an opportunity or friction
-2. Hypothesize a change
-3. Branch to isolate the experiment
-4. Implement the mutation
-5. Evaluate the outcome
-6. Commit with genetics (if keeping) or discard
-7. Integrate back to main line
-
-### Reflection
-
-How to synthesize experience:
-
-- After sessions, pause and review what happened
-- Identify friction, patterns, and what worked
-- Propose opportunities—candidates for future experiments
-- Surface insights that might inform new skills or challenges
-
-Reflection feeds experimentation. Experimentation generates experience to reflect on.
-
-### Skill Synthesis
-
-How to grow new capabilities:
-
-- Recognize when a repeated pattern is worth capturing
-- Structure the skill: what it does, when to use it, how to apply it
-- Validate the skill works—test it in isolation
-- Add it to `skills/` for future reference
-
-Skills compound. Each new skill makes the agent more capable.
-
-### Self-Challenge
-
-How to generate your own growth opportunities:
-
-- Identify the edges of your current capability
-- Construct challenges that stretch just beyond what's comfortable
-- Run the challenge as an experiment
-- Learn from the outcome—feed back into Reflection
-
-Without self-challenge, the agent only grows when external friction appears. With it, the agent drives its own evolution.
-
----
-
-## Bootstrap
-
-The agent is pointed at this repo and given a simple instruction:
-
-> Read BOOTSTRAP.md. Follow the instructions to birth yourself.
-
-The bootstrap process:
-
-1. Establish identity (merge seed constitution with any user overrides)
-2. Ask the user where to root the system (default: `.spores/`, but `.agents/` or other paths are fine)
-3. Initialize git *inside* the root directory—this is the agent's lineage, separate from any parent project
-4. Record the birth commit
-5. Verify the setup:
-   - Root directory exists
-   - Git is initialized inside it
-   - Constitution is in place
-   - Birth commit is recorded
-6. Begin first session
-
-The first act of a SPORES system is creating its own observability.
-
----
-
-## What Emerges
-
-SPORES doesn't prescribe outcomes. It creates conditions for emergence:
-
-- Agents that improve at improving
-- Lineages that can be traced and understood
-- Systems that grow to fit their environment
-- Behaviors that weren't explicitly designed
-
-The goal is to plant seeds and watch what grows.
-
----
-
 ## Open Questions
 
 These are research problems, not implementation gaps:
 
-**Rate limiting.** How to prevent runaway self-modification? When should the agent pause and consolidate rather than keep experimenting?
+**Context bridge quality.** How do you measure whether bridges are actually good? An agent can write reflection notes that feel thorough but miss the critical context future sessions need. What makes a bridge effective?
 
-**Catastrophic mutations.** How to recover when self-modification breaks the system? Git provides rollback, but the agent must recognize when it's broken and know to use it.
+**Constitutional evolution.** When an agent's understanding deepens enough to warrant changing its constitution, how should that work? Identity changes ripple through everything. Too rigid and the agent can't adapt. Too fluid and it loses coherence.
 
-**Challenge calibration.** Self-challenge works when challenges are appropriately difficult. Too easy, no growth. Too hard, no success. How does the agent calibrate?
+**Collaborative calibration.** How much should the agent drive its own evolution versus following human direction? The balance probably shifts over time — more human guidance early, more agent autonomy as trust builds.
 
-**The bitter lesson.** Eventually, learned patterns will beat designed patterns. SPORES is scaffolding for systems that will outgrow it.
+**Rate limiting.** How to prevent runaway self-modification? When should the agent consolidate rather than keep experimenting?
+
+**Multi-agent lineage.** When multiple agents use SPORES in the same environment, how do their evolutionary records interact? Can one agent learn from another's lineage?
 
 ---
 
@@ -238,4 +195,4 @@ These are research problems, not implementation gaps:
 
 ---
 
-*SPORES: Plant the seed. Watch it grow.*
+_SPORES: Plant the seed. Watch it grow._
