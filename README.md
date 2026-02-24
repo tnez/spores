@@ -1,8 +1,14 @@
-# SPORES
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
+    <img alt="SPORES banner — mycelium network spreading across a forest floor" src="assets/banner-dark.png" width="100%">
+  </picture>
+</p>
 
-_Self-improving Patterns for Organic, Recursive Evolution of Systems_
-
-Patterns for growing self-improving agents.
+<h1 align="center">SPORES</h1>
+<p align="center"><em>Self-improving Patterns for Organic, Recursive Evolution of Systems</em></p>
+<p align="center">Patterns for growing self-improving agents.</p>
 
 ---
 
