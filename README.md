@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.png">
-    <img alt="SPORES — Self-improving Patterns for Organic, Recursive Evolution of Systems. Patterns for growing self-improving agents." src="assets/banner-dark.png" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.jpg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.jpg">
+    <img alt="SPORES — Self-improving Patterns for Organic, Recursive Evolution of Systems. Patterns for growing self-improving agents." src="assets/banner-dark.jpg" width="100%">
   </picture>
 </p>
 
