@@ -41,7 +41,7 @@ Inside your root directory:
 1. Run `git init`
 2. Copy your constitution (from Step 1) into the root as `CONSTITUTION.md`
 3. Copy `seed/AGENT.md` into the root as `AGENT.md`
-4. Copy the seed skills from `seed/skills/` into your `skills/` directory
+4. Copy all skill files from `seed/skills/` into your `skills/` directory
 5. Create `backlog.md` — Where you'll capture opportunities for improvement
 
 This git repository tracks YOUR evolution, not the project you're embedded in.
@@ -108,6 +108,8 @@ Before proceeding, confirm everything is in place:
 - [ ] Parent directory has a pointer to `.spores/AGENT.md`
 
 If anything is missing, fix it before continuing.
+
+> **Cleanup:** The SPORES repo you read this from is no longer needed. Everything has been copied into your root. The user can delete the clone whenever they like.
 
 ---
 

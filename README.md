@@ -162,13 +162,19 @@ SPORES includes five seed skills — prose patterns the agent can reference and 
 
 ## Getting Started
 
-Paste this into your agent:
+Clone the repo:
 
-```text
-Read https://raw.githubusercontent.com/tnez/spores/main/BOOTSTRAP.md and follow the instructions.
+```bash
+git clone https://github.com/tnez/spores.git
 ```
 
-That's it. The agent handles the rest.
+Then tell your agent:
+
+```text
+Read spores/BOOTSTRAP.md and follow the instructions.
+```
+
+The agent walks you through the rest. When it's done, you can delete the clone — everything your agent needs lives in its own root.
 
 ---
 
